@@ -64,7 +64,7 @@
   <header class="header" id="header">
     <div class="container">
       <a href="#inicio" class="logo">
-        <img src="logo alphayomega.png" alt="Alpha y Omega Seguros" width="180">
+        <img src="logo alphayomega.png" alt="Alpha y Omega Seguros" width="110">
       </a>
       <nav class="nav">
         <a href="#inicio">Inicio</a>
@@ -229,5 +229,26 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <!-- Chatbot Botsonic -->
+<script>
+  !function(B,o,t,s,O,n,i,C){
+    if(!B[s]){
+      B[s]=function(){
+        (B[s].q=B[s].q||[]).push(arguments);
+      };
+      B[s].l=1*new Date();
+      i=document.createElement('script');
+      i.async=1;
+      i.src='https://cdn.botsonic.com/botsonic-sdk.js';
+      i.onload=function(){
+        Botsonic.init({
+          serviceBaseUrl: "https://api-bot.writesonic.com",
+          token: "bf8f6444-4730-4912-b889-206c78785629"
+        });
+      };
+      document.head.appendChild(i);
+    }
+  }(window,0,"Botsonic");
+</script>
 </body>
 </html>
