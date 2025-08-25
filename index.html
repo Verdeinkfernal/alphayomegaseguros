@@ -215,37 +215,9 @@
     </div>
   </footer>
 
-  <!-- Contenedor flotante: Solo Chatbot Botsonic -->
-  <div class="floating-container">
-    <div class="floating-item chatbot-trigger" id="botsonic-trigger">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="30" height="30">
-        <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 5.52 0 10-4.48 10-10 0-5.52-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8 0-4.41 3.59-8 8-8 1.85 0 3.55.63 4.9 1.69l-1.97 1.97c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l3.75-3.75c.39-.39.39-1.02 0-1.41L13.41 4.9c-.39-.39-1.02-.39-1.41 0-1.36.98-3.06 1.69-4.9 1.69-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8c0-1.85-.71-3.55-1.69-4.9l1.97-1.97c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9.59 17.41c-.39.39-.39 1.02 0 1.41l3.75 3.75c.39.39 1.02.39 1.41 0l1.97-1.97c1.35 1.06 3.05 1.69 4.9 1.69 4.41 0 8-3.59 8-8s-3.59-8-8-8z"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Chatbot Botsonic -->
+  <!-- Chatbot Botsonic (sin ícono flotante manual - carga solo) -->
   <script>
-    window.addEventListener('error', function(e) {
-      if (e.message.includes('botsonic')) {
-        e.preventDefault();
-      }
-    }, true);
-
-    (function (w, d, s, o, f, js, fjs) {
-      try {
-        w["botsonic_widget"] = o;
-        w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
-        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-        js.id = o;
-        js.src = f;
-        js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-      } catch (err) {
-        console.warn("Chatbot no disponible temporalmente.");
-      }
-    })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
-
+    // Inicializa Botsonic
     window.Botsonic = window.Botsonic || function() {
       (window.Botsonic.q = window.Botsonic.q || []).push(arguments);
     };

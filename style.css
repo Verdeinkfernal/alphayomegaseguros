@@ -97,7 +97,7 @@ body {
 
 /* Hero */
 .hero {
-  padding: 140px 0 100px; /* Ajustado para compensar el header fijo */
+  padding: 140px 0 100px; /* Ajustado para compensar header fijo */
   background-color: #F8F9FA;
   text-align: center;
   animation: fadeIn 1s ease-out;
@@ -132,6 +132,7 @@ body {
   text-align: center;
 }
 
+/* Botones */
 .btn-primary {
   display: inline-block;
   background-color: #2E6BCC;
@@ -208,6 +209,12 @@ body {
   gap: 30px;
 }
 
+@media (min-width: 768px) {
+  .por-que .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .por-que .item {
   background: #F8F9FA;
   padding: 25px;
@@ -238,6 +245,12 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .productos .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .producto {
@@ -434,40 +447,15 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Contenedor flotante: WhatsApp + Chatbot */
-.floating-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 1000;
-}
-
-.floating-item {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.floating-item:hover {
-  transform: scale(1.1) rotate(10deg);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-float {
-  background-color: #25D366; /* Verde WhatsApp */
-}
-
-.chatbot-trigger {
-  background-color: #6A35D8; /* Morado Botsonic */
+/* Scroll margin para que el header no tape el contenido */
+#inicio,
+#historia,
+#por-que,
+#productos,
+#trabaja,
+#testimonios,
+#contacto {
+  scroll-margin-top: 100px;
 }
 
 /* Responsive */
@@ -487,14 +475,6 @@ body {
   .hero p,
   .hero-tagline {
     text-align: left;
-  }
-
-  .por-que .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .productos .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -529,17 +509,5 @@ body {
   .nav {
     gap: 15px;
     font-size: 0.9rem;
-  }
-
-  /* Contenedor flotante móvil */
-  .floating-container {
-    bottom: 20px;
-    right: 20px;
-    gap: 10px;
-  }
-
-  .floating-item {
-    width: 55px;
-    height: 55px;
   }
 }
