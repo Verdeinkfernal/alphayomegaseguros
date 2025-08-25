@@ -215,27 +215,32 @@
     </div>
   </footer>
 
-  <!-- Chatbot Botsonic (SDK oficial) -->
-  <script>
-    !function(B,o,t,s,O,n,i,C){
-      if(!B[s]){
-        B[s]=function(){
-          (B[s].q=B[s].q||[]).push(arguments);
-        };
-        B[s].l=1*new Date();
-        i=document.createElement('script');
-        i.async=1;
-        i.src='https://cdn.botsonic.com/botsonic-sdk.js';
-        i.onload=function(){
-          Botsonic.init({
-            serviceBaseUrl: "https://api-bot.writesonic.com",
-            token: "bf8f6444-4730-4912-b889-206c78785629"
-          });
-        };
-        document.head.appendChild(i);
-      }
-    }(window,0,"Botsonic");
-  </script>
+  <!-- Chatbot Botsonic - Carga retrasada y segura -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      if (typeof Botsonic !== "undefined") return; // Evita duplicados
+
+      window.Botsonic = window.Botsonic || function () {
+        (window.Botsonic.q = window.Botsonic.q || []).push(arguments);
+      };
+
+      const script = document.createElement("script");
+      script.async = 1;
+      script.src = "https://cdn.botsonic.com/botsonic-sdk.js";
+      script.onload = function () {
+        Botsonic("init", {
+          serviceBaseUrl: "https://api-bot.writesonic.com",
+          token: "bf8f6444-4730-4912-b889-206c78785629",
+        });
+      };
+      script.onerror = function () {
+        console.error("Error al cargar el SDK de Botsonic");
+      };
+      document.head.appendChild(script);
+    }, 2000); // Retraso de 2 segundos para asegurar carga
+  });
+</script>
 
   <!-- Scripts -->
   <script src="script.js"></script>
