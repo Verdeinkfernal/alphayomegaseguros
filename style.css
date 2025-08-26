@@ -311,6 +311,67 @@ body {
   text-align: center;
 }
 
+/* Nuestro Equipo de Asesores */
+.equipo {
+  background-color: #F8F9FA;
+  text-align: center;
+}
+
+.equipo h2 {
+  color: #0A2E5D;
+  margin-bottom: 15px;
+}
+
+.equipo .subtitulo {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.equipo .grid-asesores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.asesor {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asesor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.asesor img {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #D4AF37;
+  width: 120px;
+  height: 120px;
+}
+
+.asesor h3 {
+  color: #0A2E5D;
+  font-size: 1.3rem;
+  margin: 10px 0 5px;
+}
+
+.asesor .cargo {
+  color: #2E6BCC;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 /* Trabaja con nosotros */
 .trabaja {
   background-color: #F8F9FA;
@@ -447,8 +508,37 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Contenedor flotante: WhatsApp */
+.floating-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.floating-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-item:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float {
+  background-color: #25D366;
+}
+
 /* Scroll margin para evitar que el header tape el contenido */
-#inicio, #historia, #por-que, #productos, #trabaja, #testimonios, #contacto {
+#inicio, #historia, #por-que, #productos, #equipo, #trabaja, #testimonios, #contacto {
   scroll-margin-top: 100px;
 }
 
