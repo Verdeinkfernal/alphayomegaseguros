@@ -215,39 +215,21 @@
     </div>
   </footer>
 
-  <!-- Chatbot Botsonic - Carga segura con reintento -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function loadBotsonic(retry = 0, maxRetries = 5) {
-        if (typeof Botsonic !== "undefined") return;
-
-        const script = document.createElement("script");
-        script.src = "https://cdn.botsonic.com/botsonic-sdk.js";
-        script.async = true;
-        script.onload = () => {
-          console.log("Botsonic SDK cargado");
-          Botsonic("init", {
-            serviceBaseUrl: "https://api-bot.writesonic.com",
-            token: "bf8f6444-4730-4912-b889-206c78785629",
-          });
-        };
-        script.onerror = () => {
-          if (retry < maxRetries) {
-            console.warn(`Reintentando cargar Botsonic... (${retry + 1}/${maxRetries})`);
-            setTimeout(() => loadBotsonic(retry + 1, maxRetries), 3000);
-          } else {
-            console.error("Botsonic no se pudo cargar después de varios intentos.");
-          }
-        };
-        document.head.appendChild(script);
-      }
-
-      // Iniciar carga después de 2 segundos
-      setTimeout(loadBotsonic, 2000);
-    });
-  </script>
+  <!-- Chatbot Botsonic - iFrame (solución estable) -->
+  <iframe 
+    id="botsonic-iframe"
+    style="position: fixed; bottom: 30px; right: 30px; width: 380px; height: 520px; z-index: 1000; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: none; transition: transform 0.3s ease;"
+    src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-bot.writesonic.com&token=bf8f6444-4730-4912-b889-206c78785629&base-origin=https%3A%2F%2Falphayomegaseguros.netlify.app&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Falphayomegaseguros.netlify.app"
+    title="Chatbot de Alpha y Omega Seguros">
+  </iframe>
 
   <!-- Scripts -->
+  <script>
+    // Opcional: Animación al abrir el chatbot
+    document.getElementById('botsonic-iframe').addEventListener('load', function () {
+      console.log("Chatbot Botsonic cargado con iframe");
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
