@@ -215,30 +215,35 @@
     </div>
   </footer>
 
-  <!-- Chatbot Botsonic - Carga segura y retrasada -->
+  <!-- Chatbot Botsonic - Carga segura con reintento -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(function () {
+      function loadBotsonic(retry = 0, maxRetries = 5) {
         if (typeof Botsonic !== "undefined") return;
 
-        window.Botsonic = window.Botsonic || function () {
-          (window.Botsonic.q = window.Botsonic.q || []).push(arguments);
-        };
-
         const script = document.createElement("script");
-        script.async = 1;
         script.src = "https://cdn.botsonic.com/botsonic-sdk.js";
-        script.onload = function () {
+        script.async = true;
+        script.onload = () => {
+          console.log("Botsonic SDK cargado");
           Botsonic("init", {
             serviceBaseUrl: "https://api-bot.writesonic.com",
             token: "bf8f6444-4730-4912-b889-206c78785629",
           });
         };
-        script.onerror = function () {
-          console.error("Error al cargar el SDK de Botsonic");
+        script.onerror = () => {
+          if (retry < maxRetries) {
+            console.warn(`Reintentando cargar Botsonic... (${retry + 1}/${maxRetries})`);
+            setTimeout(() => loadBotsonic(retry + 1, maxRetries), 3000);
+          } else {
+            console.error("Botsonic no se pudo cargar después de varios intentos.");
+          }
         };
         document.head.appendChild(script);
-      }, 2000);
+      }
+
+      // Iniciar carga después de 2 segundos
+      setTimeout(loadBotsonic, 2000);
     });
   </script>
 
