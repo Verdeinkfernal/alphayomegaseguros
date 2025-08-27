@@ -1,12 +1,4 @@
-# Configuración para que el navegador interprete correctamente el archivo manifest
 [[headers]]
   for = "/favicons/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json"
-
-# Redirección después del envío del formulario
-[[redirects]]
-  from = "/contacto"
-  to = "/gracias.html"
-  status = 301
-  force = false

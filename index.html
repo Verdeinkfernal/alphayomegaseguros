@@ -41,7 +41,7 @@
   <link rel="canonical" href="https://alphayomegaseguros.netlify.app" />
 
   <!-- Preload del logo -->
-  <link rel="preload" as="image" href="logoalphayomega.png">
+  <link rel="preload" as="image" href="logo-alphayomega.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
   <header class="header" id="header">
     <div class="container">
       <a href="#inicio" class="logo">
-        <img src="logoalphayomega.png" alt="Alpha y Omega Seguros" width="110">
+        <img src="logo-alphayomega.png" alt="Alpha y Omega Seguros" width="110">
       </a>
       <nav class="nav">
         <a href="#inicio">Inicio</a>
@@ -89,7 +89,7 @@
         <a href="https://wa.me/593992895376" target="_blank" class="btn-primary">Agenda tu asesoría gratuita</a>
       </div>
       <div class="hero-image">
-        <img src="logoalphayomega.png" alt="Alpha y Omega Seguros" width="300" />
+        <img src="logo-alphayomega.png" alt="Alpha y Omega Seguros" width="300" />
       </div>
     </div>
   </section>
@@ -211,19 +211,19 @@
   </section>
 
   <!-- Contacto -->
-<section id="contacto" class="seccion contacto">
-  <div class="container">
-    <h2>Contáctanos</h2>
-    <form name="contacto" method="POST" data-netlify="true" class="formulario">
-      <input type="hidden" name="form-name" value="contacto">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <input type="tel" name="phone" placeholder="Tu teléfono" />
-      <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-      <button type="submit" class="btn-primary">Enviar mensaje</button>
-    </form>
-  </div>
-</section>
+  <section id="contacto" class="seccion contacto">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <form name="contacto" method="POST" data-netlify="true" action="/gracias.html">
+        <input type="hidden" name="form-name" value="contacto">
+        <input type="text" name="name" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <input type="tel" name="phone" placeholder="Tu teléfono" />
+        <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
