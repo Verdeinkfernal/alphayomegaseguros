@@ -63,18 +63,11 @@
   <!-- Header Fijo -->
   <header class="header" id="header">
     <div class="container">
-      <a href="#inicio" class="logo">
+      <a href="/" class="logo">
         <img src="logo-alphayomega.png" alt="Alpha y Omega Seguros" width="110">
       </a>
       <nav class="nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#historia">Historia</a>
-        <a href="#por-que">Por qué elegirnos</a>
-        <a href="#productos">Productos</a>
-        <a href="#equipo">Nuestro Equipo</a>
-        <a href="#trabaja">Trabaja con nosotros</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="/">Inicio</a>
       </nav>
     </div>
   </header>
@@ -211,28 +204,29 @@
   </section>
 
   <!-- Contacto -->
-<section id="contacto" class="seccion contacto">
-  <div class="container">
-    <h2>Contáctanos</h2>
-    <form name="contacto" method="POST" data-netlify="true" action="/gracias.html" class="formulario">
-      <input type="hidden" name="form-name" value="contacto">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <input type="tel" name="phone" placeholder="Tu teléfono" />
-      <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-      <button type="submit" class="btn-primary">Enviar mensaje</button>
-    </form>
-  </div>
-</section>
+  <section id="contacto" class="seccion contacto">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <form name="contacto" method="POST" data-netlify="true" action="/gracias.html" class="formulario">
+        <input type="hidden" name="form-name" value="contacto">
+        <input type="text" name="name" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <input type="tel" name="phone" placeholder="Tu teléfono" />
+        <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <p><a href="/" style="color: white; text-decoration: underline; margin-right: 20px;">Volver al inicio</a></p>
       <p>&copy; 2025 Alpha y Omega Seguros. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Chatbot Botsonic - iFrame ajustado para no tapar contenido -->
+  <!-- Chatbot Botsonic -->
   <iframe 
     id="botsonic-iframe"
     style="position: fixed; bottom: 30px; right: 30px; width: 350px; height: 450px; z-index: 1000; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: none; max-width: 100%; overflow: hidden;"
