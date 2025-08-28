@@ -58,10 +58,26 @@
     gtag('config', 'G-SSZN2V40RK');
   </script>
 
-  <!-- Chatbot Botpress -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-  <script src="https://files.bpcontent.cloud/2025/08/26/20250826180546-SLTYP70F.js" defer></script>
-</head>
+  <!-- Chatbot Botsonic -->
+  <script>
+  (function (w, d, s, o, f, js, fjs) {
+    w["botsonic_widget"] = o;
+    w[o] =
+      w[o] ||
+      function () {
+        (w[o].q = w[o].q || []).push(arguments);
+      };
+    (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+    js.id = o;
+    js.src = f;
+    js.async = 1;
+    fjs.parentNode.insertBefore(js, fjs);
+  })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+  Botsonic("init", {
+    serviceBaseUrl: "https://api-bot.writesonic.com",
+    token: "bf8f6444-4730-4912-b889-206c78785629",
+  });
+</script>
 <body>
 
   <!-- Header Fijo -->
