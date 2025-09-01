@@ -3,7 +3,7 @@
   "short_name": "Alpha y Omega",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A2E5D",
+  "background_color": "#FFFFFF",
   "theme_color": "#2E6BCC",
   "icons": [
     {
