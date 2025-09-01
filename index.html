@@ -62,22 +62,18 @@
   <script>
   (function (w, d, s, o, f, js, fjs) {
     w["botsonic_widget"] = o;
-    w[o] =
-      w[o] ||
-      function () {
-        (w[o].q = w[o].q || []).push(arguments);
-      };
-    (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-    js.id = o;
-    js.src = f;
-    js.async = 1;
+    w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
+    js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+    js.id = o; js.src = f; js.async = 1;
     fjs.parentNode.insertBefore(js, fjs);
   })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
   Botsonic("init", {
     serviceBaseUrl: "https://api-bot.writesonic.com",
     token: "bf8f6444-4730-4912-b889-206c78785629",
+    baseOrigin: "https://alphayomegaseguros.netlify.app"
   });
-</script>
+  </script>
+</head>
 <body>
 
   <!-- Header Fijo -->
@@ -86,8 +82,16 @@
       <a href="/" class="logo">
         <img src="logo-alphayomega.png" alt="Alpha y Omega Seguros" width="110">
       </a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <nav class="nav">
-        <a href="/">Inicio</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#por-que">Por qué elegirnos</a>
+        <a href="#productos">Productos</a>
+        <a href="#equipo">Nuestro Equipo</a>
+        <a href="#trabaja">Trabaja con nosotros</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -248,5 +252,19 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+
+  <!-- Script del menú hamburguesa -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav').classList.toggle('active');
+    }
+
+    // Cierra el menú al hacer clic en un enlace
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
